@@ -19,5 +19,8 @@
   "homepage": "https://github.com/MartinMihaylov55/Hogwarts_Hobo_Game#readme",
   "devDependencies": {
     "electron": "^8.1.1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
   }
 }
