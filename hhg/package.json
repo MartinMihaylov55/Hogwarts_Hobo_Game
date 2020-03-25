@@ -11,7 +11,7 @@
     "electron": "^1.4.14",
     "react-scripts": "3.4.1"
   },
-"main": "src/electron-starter.js",
+  "main": "src/electron-starter.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
