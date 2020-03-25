@@ -1,3 +1,7 @@
+.RowOfRails{
+	position: fixed;	
+}
+
 .App {
   text-align: center;
 }

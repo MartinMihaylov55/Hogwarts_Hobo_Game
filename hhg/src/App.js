@@ -10,29 +10,32 @@ class Rail extends React.Component {
   }
 }
 
-function createLine(length){
+
+
+class RailLine extends React.Component {
+  
+  createLine = (length) => {
 	let line = []
 	for (let i = 0; i < length; i++) {
 		line.push(<Rail />)
 	}
 	return line
   }
-
-
+  
+  render() {
+    return (
+		<div className = "RowOfRails">
+		    {this.createLine(12)}
+		</div>
+    );
+  }
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-		<div className = "RowOfRails">
-			{createLine(15)}
-		</div>
-		<div className = "RowOfRails">
-			{createLine(20)}
-		</div>
-		<div className = "RowOfRails">
-			{createLine(10)}
-		</div>
+	  <RailLine />
       </header>
     </div>
   );
