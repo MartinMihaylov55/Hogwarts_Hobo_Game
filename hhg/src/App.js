@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Rails from './components/Rails'
 
+<<<<<<< HEAD
 class Rail extends React.Component {
   render() {
     return (
@@ -38,6 +40,14 @@ function App() {
 	  <RailLine />
       </header>
     </div>
+=======
+
+
+
+function App() {
+  return (
+	<Rails />
+>>>>>>> master
   );
 }
 
