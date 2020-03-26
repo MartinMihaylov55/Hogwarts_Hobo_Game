@@ -13,7 +13,7 @@ export class Rails extends Component {
     change = (e) =>{
         this.setState(
             {
-                [e.target.name]:e.target.value
+                [e.target.name]:e.target.value,
             }
         )
     }
@@ -38,7 +38,7 @@ export class Rails extends Component {
         }
         return id
     }
-
+    
     
     createRail = (num) => {
         let rails = []
@@ -50,6 +50,7 @@ export class Rails extends Component {
       }
 
     render() {
+        this.state.ids = this.railID(this.state.number) 
         return (
             <div>
                 <form>
@@ -73,7 +74,7 @@ export class Rails extends Component {
                     */}
                 </form>
                 <div>
-                    {this.state.ids = this.railID(this.state.number)}
+                    
                     {this.createRail(this.state.number)}
                     
                 </div>

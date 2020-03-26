@@ -7,7 +7,7 @@ export class Player extends Component {
     render() {
         return (
             <div>
-
+                
             </div>
             
         )
