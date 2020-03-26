@@ -33,7 +33,7 @@ export class Rails extends Component {
     createRail = (num) => {
         let rails = []
         for (let i = 0; i < num; i++) {
-          rails.push(<div>{this.createLine(10)}</div>)
+          rails.push(<div>{this.createLine(27)}</div>)
         }
         return rails
       }

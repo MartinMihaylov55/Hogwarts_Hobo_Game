@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Rails from './components/Rails'
-
+import Hobo from './components/Hobo'
 
 
 
 function App() {
   return (
-	<Rails />
+	  	<Fragment>
+		  	<Rails />
+			<Hobo />
+		</Fragment>
+	
   );
 }
 
