@@ -1,34 +1,27 @@
 import React, { Component } from 'react'
-import ArrowKeysReact from 'arrow-keys-react';
 import PlayerImage from '../assets/dude.png'
 
 export class Player extends Component {
-	ArrowKeysReact.config({
-      left: () => {
-        console.log('left key detected.');
-      },
-      right: () => {
-        console.log('right key detected.');
-      },
-      up: () => {
-        console.log('up key detected.');
-      },
-      down: () => {
-        console.log('down key detected.');
-      }
-    });
     render() {
         return (
-<<<<<<< Updated upstream
-            <div>
-                
-=======
-            <div {...ArrowKeysReact.events} tabIndex = "1">
+		<div classname = "PlayerContainer">
+            <div classname = "Dude">
 				<img src = {PlayerImage} alt="" className="img-responsive" />
->>>>>>> Stashed changes
             </div>
+			<div classname = "ControlField">
+				<form>
+				<input 
+                        type = "text"
+                        name = "number" 
+                        placeholder = "0"
+						size = "3">
+                 </input>
+				</form>
+				<button>Go There!</button>
+			</div>
+		</div>
         )
     }
 }
 
-export default Rails
+export default Player
