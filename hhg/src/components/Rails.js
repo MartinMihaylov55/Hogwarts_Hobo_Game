@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import RailImage from '../assets/rail.png'
+import RailEnd from '../assets/pit.png'
 
 export class Rails extends Component {
     state = {
@@ -25,6 +26,7 @@ export class Rails extends Component {
         for (let i = 0; i < length; i++) {
             line.push(<img src = {RailImage} alt="" className="img-responsive" />)
         }
+		line.push(<img src = {RailEnd} alt="" className="img-responsive" />)
         return line
       }
 
