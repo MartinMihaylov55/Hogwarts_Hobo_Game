@@ -8,7 +8,6 @@ function App() {
   return (
 	  	<Fragment>
 		  	<Rails />
-			<Hobo />
 		</Fragment>
 	
   );

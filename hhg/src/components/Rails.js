@@ -5,9 +5,11 @@ import RailEnd from '../assets/pit.png'
 
 export class Rails extends Component {
     state = {
-        number: ''
+        number: '',
+        ids:''
     }
-    
+
+
     change = (e) =>{
         this.setState(
             {
@@ -20,16 +22,22 @@ export class Rails extends Component {
         e.preventDefault();
         console.log(this.state);
     }
-
     createLine(length){
-        let line = []
+        let line = [];
         for (let i = 0; i < length; i++) {
-            line.push(<img src = {RailImage} alt="" className="img-responsive" />)
+            line.push(<img src = {RailImage} alt="" className="img-responsive" />);
         }
-		line.push(<img src = {RailEnd} alt="" className="img-responsive" />)
+        line.push(<img src = {RailEnd} alt="" className="img-responsive" />);     
         return line
       }
 
+    railID = (num) => {
+        let id = []
+        for (let i = 0; i < num; i++){
+            id.push(i);
+        }
+        return id
+    }
 
     
     createRail = (num) => {
@@ -37,6 +45,7 @@ export class Rails extends Component {
         for (let i = 0; i < num; i++) {
           rails.push(<div>{this.createLine(27)}</div>)
         }
+        console.log(this.state.ids);
         return rails
       }
 
@@ -64,8 +73,11 @@ export class Rails extends Component {
                     */}
                 </form>
                 <div>
+                    {this.state.ids = this.railID(this.state.number)}
                     {this.createRail(this.state.number)}
+                    
                 </div>
+            
             </div>
             
         )
