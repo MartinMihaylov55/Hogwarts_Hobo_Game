@@ -11,6 +11,7 @@ function App() {
 		  	<Rails />
 			<Player />
 			<Train />
+
 		</Fragment>
 	
   );

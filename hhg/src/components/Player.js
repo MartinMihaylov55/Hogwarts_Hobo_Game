@@ -4,11 +4,11 @@ import PlayerImage from '../assets/dude.png'
 export class Player extends Component {
     render() {
         return (
-		<div classname = "PlayerContainer">
-            <div classname = "Dude">
+		<div className = "PlayerContainer">
+            <div className = "Dude">
 				<img src = {PlayerImage} alt="" className="img-responsive" />
             </div>
-			<div classname = "ControlField">
+			<div className = "ControlField">
 				<form>
 				<input 
                         type = "text"
