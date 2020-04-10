@@ -23,11 +23,10 @@ fcount = 0 # count failiures
 mcount = 1 # count for every actions to get the percentage
 # Game Loop run for n iterations
 for i in range(tracks):
-    #train = Train(position,random.randint(t.getLength()),speed,time)
-    t = Train()
+    
     print(i)
     #player on track at that time and there is a train coming up
-    if p.getPosition() == t.getTrack():
+    if p.getPosition() == t.getTrainPos(i):
         p.getHit(elapsedTime)
         elapsedTime+=1
 
@@ -46,8 +45,7 @@ for i in range(tracks):
 
 
     # Move trains, check for collisions
-    
-
+    # Move train randomly
 
     # Sum the failiures
     pc = (fcount/mcount)*100 # percentage
@@ -58,3 +56,7 @@ for i in range(tracks):
 # Give schedule to arriving trains
 def timeGenerator(start):
     return random.randint(start,60)
+
+
+
+#Display time
