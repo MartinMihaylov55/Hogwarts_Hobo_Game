@@ -12,24 +12,41 @@ elapsedTime = 0
 
 # Take parameter as intput from stdin
 tracks = int(input("Enter the number of tracks: "))
-p = Player()
+p = Player(0)
 t = Tunnel(tracks)
 print("Generated RailTrack object successfully, " + str(t))
 
 fcount = 0 # count failiures
-clock = 0 # keep track of time (per hour)
+mcount = 1 # count for every actions to get the percentage
 # Game Loop run for n iterations
 for i in range(tracks):
     #train = Train(position,random.randint(t.getLength()),speed,time)
+    t = Train()
     print(i)
+    #player on track at that time and there is a train coming up
+    if p.getPosition() == t.getTrack():
+        p.getHit(elapsedTime)
+        elapsedTime+=1
+
 
     # In each step:
     # We ask our player if they want to move (potential algorithm: move to random track)
+    decision = input("Move to new track? (Y/N)")
+    if decision.lower() == "y":
+        p.move(1)
+    elif decision.lower() == "n":
+        print("staying")
+    else:
+        print("Undefined command")
     # We ask benchmark player if they want to move
+    
+    
+
     # Move trains, check for collisions
     # Sum the failiures
+    pc = (fcount/mcount)*100 # percentage
     # After all iterations are done return return the percentage of successes for each player
 
 # Give schedule to arriving trains
 def timeGenerator(start):
-    return random.randint(start,23)
+    return random.randint(start,60)
