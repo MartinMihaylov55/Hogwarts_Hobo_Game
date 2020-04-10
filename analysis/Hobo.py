@@ -6,7 +6,7 @@ class Hobo:
         self.position = position
         self.paperPlanes = [] 
             
-    def giveHint(self):
+    def getHint(self):
         return self.paperPlanes.pop(self.position)
 
     def addInfo(self, position):
