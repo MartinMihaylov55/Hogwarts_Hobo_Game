@@ -19,7 +19,7 @@ class RailTrack:
             else:
                 self.deltaTime+=1           
         else:
-            if(deltaTime == (timer%4)):
+            if(self.deltaTime == (timer%4)):
                 self.occupiedByTrain = True
             else:
                 self.deltaTime+=1
