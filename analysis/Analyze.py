@@ -12,7 +12,7 @@ elapsedTime = 0
 # Take parameter as intput from stdin
 tracks = int(input("Enter the number of tracks: "))
 
-p = Player(0)
+p = Player(0,tracks)
 t = Tunnel(tracks) # Railtracks and trains are in here
 
 
@@ -53,27 +53,39 @@ while not(p.health == 0):
     # Sum the failiures
      # percentage
     # After all iterations are done return return the percentage of successes for each player and other data of the game
+    
+    currPos = p.getPosition()
+    
     print("#---------------------------------------------------------#")
     railT = t.getRailTracks()
     for i in railT:
         print(i)
         currTrain = i.getTrain()
-        print("Player current position: ",p.getPosition())
-
+        if p.getHealth() == 0:
+            print("Game over!")
+            exit(0)
+        print("Player current position: ",currPos)
+        print("Player's current health: ",p.getHealth())
         print("Coming in: ",currTrain.getNextTime())# replace it with actual time
         if currTrain.getNextTime() != 0:
             currTrain.updateTime()
         else:
-            if p.getPosition() == currTrain.getPosition():
+            if currPos == currTrain.getPosition():
                 p.getHit(elapsedTime)
                 print("You got hit!")
                 i.updateFail()
-            i.setNewTrain()
+            i.setNewTrain()        
         pc = (i.getFails()/mcount)*100
+        p.addPercentage(pc)
         print("Unsafe percentage: ",pc," %")
         elapsedTime += 1
         mcount += 1
     print("#---------------------------------------------------------#")
+
+    p.setCurrP(p.percentages[currPos])
+    p.setNextP(p.percentages[currPos + 1])
+    p.setPrevP(p.percentages[currPos - 1])
+
     # Then update the game
     t.update()
 print("Oh no, You got trampled by the trains!")

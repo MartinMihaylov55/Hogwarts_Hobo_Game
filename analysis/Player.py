@@ -3,11 +3,16 @@ from RailTrack import RailTrack
 from Train import Train
 
 class Player:
-    def __init__(self, position):
+    def __init__(self, position,length):
         self.position = position
         self.health = 10
         self.party = [] #The hobos in your party
         self.hints = {} #Any info you learn about the trains
+        self.prevP = 0
+        self.nextP = 0
+        self.currP = 0
+        self.length = length
+        self.percentages = []
         
     def move(self, steps):
         if((self.position + steps) > 0):
@@ -15,16 +20,16 @@ class Player:
         else:
             print("You can't go any further back!")
     
+    def setPrevP(self,percentage):
+        self.prevP = percentage
+    
+    def addPercentage(self,percent):
+        self.percentages.append(percent)
+
     def getHit(self, timeHit):
         self.health-=1
         self.recordInfo(self.position, timeHit)
         self.move(-1)
-
-    def gameOver(self):
-        result = ""
-        if self.health == 0:
-            result = "Game over!"
-        return result
 
     #Any hints or mistakes to learn from are recorded here in pair tuples with the position of that object and an int to record when the player was hit
     def recordInfo(self, position, timeHit):
@@ -40,5 +45,5 @@ class Player:
     def getPosition(self):
         return self.position
 
-    def findRoute(self):
-        return True
+    def getHealth(self):
+        return self.health
