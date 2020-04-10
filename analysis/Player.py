@@ -6,7 +6,7 @@ class Player:
         self.position = position
         self.health = 10
         self.party = [] #The hobos in your party
-        self.hints = [] #Any info you learn about the trains
+        self.hints = {} #Any info you learn about the trains
         
     def move(self, steps):
         self.position += steps
@@ -19,4 +19,4 @@ class Player:
     
     #Any hints or mistakes to learn from are recorded here in pair tuples with the position of that object and an int to record when the player was hit
     def recordInfo(self, position, description):
-        self.hints.append((position, description))
+        self.hints[position].append(description)
