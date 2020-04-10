@@ -12,3 +12,8 @@ class Tunnel:
 
     def getLength(self):
         return self.length
+    
+    def update(self):
+        for i in self.railtracks:
+            i.update()
+            

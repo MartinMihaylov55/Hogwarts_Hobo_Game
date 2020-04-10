@@ -5,7 +5,8 @@ class Train:
         self.spendTime = spendTime
         self.nextSpendTime = nextSpendTime
         
-    
+    def getPostion():
+        return self.position
 #Do we need the time?
 #We could've just use the speed and the distance to get the time
 #Is track neccessary
