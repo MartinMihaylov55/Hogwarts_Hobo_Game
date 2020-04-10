@@ -53,6 +53,7 @@ while True:
     print("#---------------------------------------------------------#")
     railT = t.getRailTracks()
     for i in railT:
+        print("ID: ",)
         print("Coming in: 3")# replace it with actual time
         print("Player current position: ",p.getPosition())
         if t.railtracks[p.position].occupiedByTrain:
