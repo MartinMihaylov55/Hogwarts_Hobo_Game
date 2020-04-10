@@ -24,3 +24,5 @@ class RailTrack:
             else:
                 deltaTime+=1
         self.timer+=1
+    
+    
