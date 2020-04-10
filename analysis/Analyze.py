@@ -21,7 +21,7 @@ print("Generated RailTrack object successfully, " + str(t))
 mcount = 1 # count for every actions to get the percentage
 # Game Loop run for n iterations
 #for i in range(tracks):
-while True:   
+while not(p.health == 0):   
     #player on track at that time and there is a train coming up
     # This might be redundant
 
@@ -76,6 +76,6 @@ while True:
     print("#---------------------------------------------------------#")
     # Then update the game
     t.update()
-
+print("Oh no, You got trampled by the trains!")
 
 

@@ -10,15 +10,15 @@ class Player:
         self.hints = {} #Any info you learn about the trains
         
     def move(self, steps):
-        if((self.position + steps) >= 0):
-            self.position += steps
+        if((self.position + steps) > 0):
+            self.position += steps       
         else:
-            print("illegal move")
+            print("You can't go any further back!")
     
     def getHit(self, timeHit):
         self.health-=1
         self.recordInfo(self.position, timeHit)
-        self.position-=1
+        self.move(-1)
 
     def gameOver(self):
         result = ""
@@ -27,10 +27,10 @@ class Player:
         return result
 
     #Any hints or mistakes to learn from are recorded here in pair tuples with the position of that object and an int to record when the player was hit
-    def recordInfo(self, position, description):
+    def recordInfo(self, position, timeHit):
         if(position not in self.hints.keys()):
             self.hints[position] = []
-        self.hints[position].append(description)
+        self.hints[position].append(timeHit)
 
     #Hint
     def getHint(self):
