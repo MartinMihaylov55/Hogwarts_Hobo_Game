@@ -3,7 +3,7 @@ from analysis import Analyze
 from analysis import RailTrack
 from analysis import Train
 from analysis import Tunnel
-##Compiler complains if from analysis import * used
+# Interpreter complains if from analysis import * used
 import unittest
 
 class Test(unittest.TestCase):
