@@ -1,6 +1,7 @@
 from Tunnel import Tunnel
 from RailTrack import RailTrack
 from Train import Train
+
 class Player:
     def __init__(self, position):
         self.position = position
@@ -13,7 +14,7 @@ class Player:
     
     def getHit(self, timeHit):
         self.health-=1
-        recordInfo(self.position, timeHit)
+        self.recordInfo(self.position, timeHit)
         self.position-=1
 
     def gameOver(self):
@@ -33,3 +34,6 @@ class Player:
     #Helper function
     def getPosition(self):
         return self.position
+
+    def findRoute(self):
+        return True
