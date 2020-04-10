@@ -30,4 +30,6 @@ class Player:
     def getHint(self):
         return self.hints[self.position]
     
-    
+    #Helper function
+    def getPosition(self):
+        return self.position

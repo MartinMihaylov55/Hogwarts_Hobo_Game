@@ -9,3 +9,6 @@ class Tunnel:
             
     def __str__(self):
         return "Tunnel " + str(list(map(lambda s: str(s), self.railtracks)))
+
+    def getLength(self):
+        return self.length
