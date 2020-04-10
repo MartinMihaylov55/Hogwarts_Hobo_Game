@@ -36,6 +36,8 @@ while True:
         print("staying")
     else:
         print("Undefined command")
+        break
+        
     # We ask benchmark player if they want to move
     
 
@@ -53,16 +55,22 @@ while True:
     print("#---------------------------------------------------------#")
     railT = t.getRailTracks()
     for i in railT:
-        print("ID: ",)
-        print("Coming in: 3")# replace it with actual time
+        print(i)
+        currTrain = i.getTrain()
         print("Player current position: ",p.getPosition())
-        if t.railtracks[p.position].occupiedByTrain:
-            p.getHit(elapsedTime)
-            print("You got hit!")
-            fcount +=1
+
+        print("Coming in: ",currTrain.getNextTime())# replace it with actual time
+        if currTrain.getNextTime() != 0:
+            currTrain.updateTime()
+        else:
+            if p.getPosition() == currTrain.getPosition():
+                p.getHit(elapsedTime)
+                print("You got hit!")
+                fcount +=1
         pc = (fcount/mcount)*100
-        print("Safety percentage: ",pc," %")
+        print("Unsafe percentage: ",pc," %")
         elapsedTime += 1
+        mcount += 1
     print("#---------------------------------------------------------#")
     # Then update the game
     t.update()
@@ -71,6 +79,3 @@ def timeGenerator(start):
     return random.randint(start,60)
 
 
-
-
-#Display time

@@ -25,4 +25,5 @@ class RailTrack:
                 self.deltaTime+=1
         self.timer+=1
     
-    
+    def getTrain(self):
+        return self.train
