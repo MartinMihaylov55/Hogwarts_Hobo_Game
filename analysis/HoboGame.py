@@ -5,13 +5,16 @@ Welcome to Hobo Hogwarts!
 For this deliverable there are some missing features or features that dont match the specifications:
 # Must enter number of iterations to simulate
 # No hobos
-# No possion random, just random
+# No possion distribution, just random
 # No random train duration, every train lasts for 1 step
 # No random train arrial duration, train arrive randomly at each step
-# Player does not stay on average for S second, player moves every step to random track
+# Player does not stay on average for S second
 Features that match the specification:
 # Player can move to any track
 # Benchmark algorithm moves when hit by train to random track
+Algorithm Description
+# Player alogrithm: player moves every step to random track
+# Benchmark alogrithm: player moves to random track every time it collides
 Note there is no exception handling in this version
 """)
 
@@ -55,5 +58,5 @@ print("Results: ")
 print("Simulated: ", stepNum)
 print("Player collisions: ", playerCollisionsCount)
 print("Benchmark collisions: ", benchCollisionsCount)
-print("Player success percentage: %.2f" % (playerCollisionsCount/float(stepNum)* 100) + "%")
-print("Benchmark algorithm success percentage: %.2f" % (benchCollisionsCount/float(stepNum)* 100) + "%")
+print("Player success percentage: %.2f" % (100 - playerCollisionsCount/float(stepNum)* 100) + "%")
+print("Benchmark algorithm success percentage: %.2f" % (100 - benchCollisionsCount/float(stepNum)* 100) + "%")
