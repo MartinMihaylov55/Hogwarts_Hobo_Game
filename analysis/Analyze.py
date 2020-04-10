@@ -29,7 +29,7 @@ while True:
     # We ask our player if they want to move (potential algorithm: move to random track)
     decision = input("Move to new track? (Y/N)")
     if (decision.lower() == "y"):
-        if (p.position <= t.length):
+        if (p.position <= (t.length - 1)):
             p.move(1)
         else:
             print("Unable to advance")
