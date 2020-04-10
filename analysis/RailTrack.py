@@ -14,14 +14,15 @@ class RailTrack:
     
     def update(self):
         if(self.occupiedByTrain):
-            if(deltaTime == (timer%4)):
+            if(self.deltaTime == (self.timer%4)):
                 self.occupiedByTrain = False
             else:
-                deltaTime+=1           
+                self.deltaTime+=1           
         else:
-            if(deltaTime == (timer%4)):
+            if(self.deltaTime == (self.timer%4)):
                 self.occupiedByTrain = True
             else:
-                deltaTime+=1
+                self.deltaTime+=1
         self.timer+=1
+    
     
