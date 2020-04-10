@@ -1,9 +1,10 @@
 class Train:
-    def __init__(self, position):
+    def __init__(self, position, track):
         self.position = position
-    def __init__(self, track):
         self.track = track
     def getPosition():
         return self.postion
+    def getTrack():
+        return self.track
     
 
