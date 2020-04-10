@@ -25,6 +25,8 @@ class Player:
 
     #Any hints or mistakes to learn from are recorded here in pair tuples with the position of that object and an int to record when the player was hit
     def recordInfo(self, position, description):
+        if(position not in self.hints.keys()):
+            self.hints[position] = []
         self.hints[position].append(description)
 
     #Hint
