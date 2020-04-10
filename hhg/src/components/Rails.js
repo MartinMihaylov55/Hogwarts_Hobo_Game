@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import RailImage from '../assets/rail.png'
 import RailEnd from '../assets/pit.png'
-
+import Train from './Train'
 export class Rails extends Component {
     state = {
-        number: '',
+        number: '0',
         ids:''
     }
 
@@ -19,9 +19,11 @@ export class Rails extends Component {
     }
 
     onSubmit = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
         console.log(this.state);
     }
+
+
     createLine(length){
         let line = [];
         for (let i = 0; i < length; i++) {
@@ -49,6 +51,14 @@ export class Rails extends Component {
         return rails
       }
 
+
+    createTrains = (num) => {
+        let trains = []
+        for (let i = 0; i < num; i ++){
+            trains.push(<Train />);
+        }
+        return trains
+    }
     render() {
         this.state.ids = this.railID(this.state.number) 
         return (
@@ -64,19 +74,19 @@ export class Rails extends Component {
                     </input>
                     <br/>
 
-                    {/** 
+           
                     <button 
                     type = "submit" 
                     onClick = {(e) => this.onSubmit()} 
                     >
                         Submit
                     </button>
-                    */}
+
                 </form>
                 <div>
                     
                     {this.createRail(this.state.number)}
-                    
+                    {this.createTrains(this.state.number)}
                 </div>
             
             </div>

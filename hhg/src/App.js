@@ -8,10 +8,9 @@ import Train from './components/Train'
 function App() {
   return (
 	  	<Fragment>
-		  	<Rails />
 			<Player />
-			<Train />
-
+		  	<Rails />
+			
 		</Fragment>
 	
   );
