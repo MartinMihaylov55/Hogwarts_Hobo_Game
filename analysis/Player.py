@@ -10,7 +10,10 @@ class Player:
         self.hints = {} #Any info you learn about the trains
         
     def move(self, steps):
-        self.position += steps
+        if((self.position + steps) >= 0):
+            self.position += steps
+        else:
+            print("illegal move")
     
     def getHit(self, timeHit):
         self.health-=1
