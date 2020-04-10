@@ -11,6 +11,12 @@ class Player:
     def move(self, steps):
         self.position += steps
     
-    #Any hints or mistakes to learn from are recorded here in 3-long tuples with what object it relates to, the position of that object, and a string with what info is stored (ex. Time until next train)
-    def recordInfo(self, relatedObject, position, description):
-        self.hints.append((relatedObject, position, description))
+    def getHit(self, timeHit):
+        self.health-=1
+        recordInfo(self.position, timeHit)
+        self.position-=1
+
+    
+    #Any hints or mistakes to learn from are recorded here in pair tuples with the position of that object and an int to record when the player was hit
+    def recordInfo(self, position, description):
+        self.hints.append((position, description))
