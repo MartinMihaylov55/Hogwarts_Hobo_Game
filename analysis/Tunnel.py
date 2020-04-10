@@ -16,4 +16,6 @@ class Tunnel:
     def update(self):
         for i in self.railtracks:
             i.update()
-            
+    
+    def getTrainPos(self,pos):
+        return self.railtracks[pos]

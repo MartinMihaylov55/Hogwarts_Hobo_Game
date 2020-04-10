@@ -1,5 +1,5 @@
 from Train import Train
-from random import randint
+import random
 class RailTrack:
     #Add more objects
     def __init__(self, position):
@@ -24,5 +24,4 @@ class RailTrack:
             else:
                 deltaTime+=1
         self.timer+=1
-    
     
