@@ -1,24 +1,20 @@
 from analysis import Hobo
-from analysis import Analyze
 from analysis import RailTrack
 from analysis import Train
 from analysis import Tunnel
-##Compiler complains if from analysis import * used
+# Interpreter complains if from analysis import * used
 import unittest
 
 class Test(unittest.TestCase):
 
     def testhobo(self):
-        hoboInstance = Hobo
-
-    def testanalyze(self):
-        analyzeInstance = Analyze
+        hoboInstance = Hobo.Hobo("parameter")
 
     def testrailtrack(self):
-        railtrackInstance = RailTrack
+        railtrackInstance = RailTrack.RailTrack("parameter")
 
     def traintest(self):
-        trainInstance = Train
+        trainInstance = Train.Train("Parameter", "track")
 
     def tunnelTest(self):
-        tunnelInstance = Tunnel
+        tunnelInstance = Tunnel.Tunnel("parameter")
