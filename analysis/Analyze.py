@@ -3,9 +3,8 @@ from Tunnel import Tunnel
 from Train import Train
 from Player import Player
 
-
-
 import random
+
 #This is the amount of time in seconds since the game started. If the player performs an action (ex. waits, hops), time is advanced by 1 second
 elapsedTime = 0
 
@@ -19,7 +18,6 @@ t = Tunnel(tracks) # Railtracks and trains are in here
 
 print("Generated RailTrack object successfully, " + str(t))
 
-fcount = 0 # count failiures
 mcount = 1 # count for every actions to get the percentage
 # Game Loop run for n iterations
 #for i in range(tracks):
@@ -66,16 +64,15 @@ while True:
             if p.getPosition() == currTrain.getPosition():
                 p.getHit(elapsedTime)
                 print("You got hit!")
-                fcount +=1
-        pc = (fcount/mcount)*100
+                i.updateFail()
+            i.setNewTrain()
+        pc = (i.getFails()/mcount)*100
         print("Unsafe percentage: ",pc," %")
         elapsedTime += 1
         mcount += 1
     print("#---------------------------------------------------------#")
     # Then update the game
     t.update()
-# Give schedule to arriving trains
-def timeGenerator(start):
-    return random.randint(start,60)
+
 
 
