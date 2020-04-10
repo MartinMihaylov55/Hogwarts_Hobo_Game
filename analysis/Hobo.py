@@ -7,11 +7,13 @@ class Hobo:
         self.paperPlanes = [] 
             
     def giveHint(self):
-        return self.paperPlanes[self.position]
+        return self.paperPlanes.pop(self.position)
 
     def addInfo(self, position):
         self.paperPlanes[self.position] = position
 
     def getPosition(self):
         return self.position
-
+    
+    #get the lowest pecentage
+    #add return lowest
