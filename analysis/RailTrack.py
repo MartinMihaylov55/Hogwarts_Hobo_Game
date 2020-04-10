@@ -1,4 +1,5 @@
-class RailTrack: 
+class RailTrack:
+    #Add more objects
     def __init__(self, position):
         self.position = position
     def __str__(self):
