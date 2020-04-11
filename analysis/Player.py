@@ -27,7 +27,10 @@ class Player:
     def getHit(self, timeHit):
         self.health-=1
         self.recordInfo(self.position, timeHit)
-        self.move(-1)
+        if not(self.position <= 0):
+            self.move(self.position-1)
+        else:
+            self.move(self.position+1)
 
     #Any hints or mistakes to learn from are recorded here in pair tuples with the position of that object and an int to record when the player was hit
     def recordInfo(self, position, timeHit):
