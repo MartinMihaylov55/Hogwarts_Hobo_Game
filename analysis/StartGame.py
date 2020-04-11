@@ -89,6 +89,6 @@ while not(p.health == 0):
         nextPos+=1
     # Then update the game
     t.update()
-print("Oh no, You got trampled by the trains!")
+print("You survived for " + str(elapsedTime) + " seconds")
 ex = input("Press enter to exit...")
 exit(0)
