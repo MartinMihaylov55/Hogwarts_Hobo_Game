@@ -14,11 +14,9 @@ class Player:
         self.length = length
         self.percentages = []
         
-    def move(self, steps):
-        if((self.position + steps) > 0):
-            self.position += steps       
-        else:
-            print("You can't go any further back!")
+    def move(self,pos):
+        self.position = pos       
+
     
     def setPrevP(self,percentage):
         self.prevP = percentage

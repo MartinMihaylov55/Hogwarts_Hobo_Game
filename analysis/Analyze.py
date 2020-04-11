@@ -22,6 +22,7 @@ mcount = 1 # count for every actions to get the percentage
 # Game Loop run for n iterations
 #for i in range(tracks):
 print("Loading...")
+nextPos = 0
 while not(p.health == 0):   
     #player on track at that time and there is a train coming up
     # This might be redundant
@@ -30,10 +31,6 @@ while not(p.health == 0):
     # We ask our player if they want to move (potential algorithm: move to random track)
     
     # We ask benchmark player if they want to move
-    if not(len(p.percentages) == 0):
-        p.move(p.percentages.index(min(p.percentages)) - p.position);
-    else:
-        p.move(1)
 
 
     # Move trains, check for collisions
@@ -74,6 +71,19 @@ while not(p.health == 0):
         elapsedTime += 1
         mcount += 1
     print("#---------------------------------------------------------#")
+    
+    if not(len(p.percentages) == 0):
+        print(len(p.percentages))
+        if len(p.percentages) > tracks:
+            p.percentages.pop(0)
+        else:
+            
+            p.move(p.percentages.index(min(p.percentages)))
+            print(p.percentages.index(min(p.percentages)))
+            print(p.percentages)
+    else:
+        p.move(nextPos)
+        nextPos+=1
     # Then update the game
     t.update()
 print("Oh no, You got trampled by the trains!")
