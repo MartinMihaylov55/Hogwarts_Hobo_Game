@@ -62,6 +62,9 @@ while not(p.health == 0):
         if currTrain.getNextTime() != 0:
             currTrain.updateTime()
         else:
+            h = Hobo(tracks)
+            if currPos == h.getPosition():
+                print("Next Train time:" + h.getHint(currTrain))
             if currPos == currTrain.getPosition():
                 p.getHit(elapsedTime)
                 print("You got hit!")
