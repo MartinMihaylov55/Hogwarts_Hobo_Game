@@ -2,6 +2,7 @@ from RailTrack import RailTrack
 from Tunnel import Tunnel
 from Train import Train
 from Player import Player
+from Hobo import Hobo
 
 import random
 
