@@ -10,7 +10,7 @@ class Hobo:
     def getPosition(self):
         return self.position
     
-    def hint(self, Train):
+    def getHint(self, Train):
         return Train.getNextTime()
         
     #get the lowest pecentage
