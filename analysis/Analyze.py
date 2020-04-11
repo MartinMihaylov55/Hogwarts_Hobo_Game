@@ -51,6 +51,7 @@ while not(p.health == 0):
     railT = t.getRailTracks()
     for i in railT:
         print(i)
+        
         currTrain = i.getTrain()
         if p.getHealth() == 0:
             print("Game over!")
@@ -71,17 +72,15 @@ while not(p.health == 0):
         print("Unsafe percentage: ",pc," %")
         elapsedTime += 1
         mcount += 1
+        if len(p.percentages) > tracks:
+            p.percentages.pop(0)
     print("#---------------------------------------------------------#")
     
     if not(len(p.percentages) == 0):
         print(len(p.percentages))
-        if len(p.percentages) > tracks:
-            p.percentages.pop(0)
-        else:
-            
-            p.move(p.percentages.index(min(p.percentages)))
-            print(p.percentages.index(min(p.percentages)))
-            print(p.percentages)
+        p.move(p.percentages.index(min(p.percentages)))
+        print(p.percentages.index(min(p.percentages)))
+        print(p.percentages)
     else:
         p.move(nextPos)
         nextPos+=1
