@@ -21,26 +21,19 @@ print("Generated RailTrack object successfully, " + str(t))
 mcount = 1 # count for every actions to get the percentage
 # Game Loop run for n iterations
 #for i in range(tracks):
+print("Loading...")
 while not(p.health == 0):   
     #player on track at that time and there is a train coming up
     # This might be redundant
 
     # In each step:
     # We ask our player if they want to move (potential algorithm: move to random track)
-    decision = input("Move to new track? (Y/N)")
-    if (decision.lower() == "y"):
-        if (p.position <= (t.length - 1)):
-            p.move(1)
-        else:
-            print("Unable to advance")
-    elif decision.lower() == "n":
-        print("staying")
-    else:
-        print("Undefined command")
-        break
-        
-    # We ask benchmark player if they want to move
     
+    # We ask benchmark player if they want to move
+    if not(len(p.percentages) == 0):
+        p.move(p.percentages.index(min(p.percentages)) - p.position);
+    else:
+        p.move(1)
 
 
     # Move trains, check for collisions
@@ -64,7 +57,7 @@ while not(p.health == 0):
         if p.getHealth() == 0:
             print("Game over!")
             exit(0)
-        print("Player current position: ",currPos)
+        print("Player current position: ",p.position)
         print("Player's current health: ",p.getHealth())
         print("Coming in: ",currTrain.getNextTime())# replace it with actual time
         if currTrain.getNextTime() != 0:
@@ -81,11 +74,6 @@ while not(p.health == 0):
         elapsedTime += 1
         mcount += 1
     print("#---------------------------------------------------------#")
-
-    p.setCurrP(p.percentages[currPos])
-    p.setNextP(p.percentages[currPos + 1])
-    p.setPrevP(p.percentages[currPos - 1])
-
     # Then update the game
     t.update()
 print("Oh no, You got trampled by the trains!")
